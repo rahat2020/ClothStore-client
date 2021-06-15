@@ -1,0 +1,7 @@
+.img-style{
+    transition: transform 0.5s;
+
+}
+.img-style:hover{
+    transform: translateX(-10px);
+}

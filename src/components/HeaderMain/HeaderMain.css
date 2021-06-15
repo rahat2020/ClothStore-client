@@ -1,0 +1,19 @@
+
+
+.header-title{
+   max-width: 500px;
+   margin: 20px;
+   padding-left: 62px;
+    text-align: left;
+}
+.btn{
+    background-color: tomato;
+    color: aliceblue;
+}
+.btn:hover{
+    background: #563434;
+    color: white;
+}
+.header-img{
+ 
+}
