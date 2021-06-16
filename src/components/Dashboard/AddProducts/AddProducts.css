@@ -1,0 +1,23 @@
+.form-style{
+    width:600px;
+    margin-left: 100px;
+    margin-bottom: 200px;
+    /* padding: 50px; */
+}
+.product-title{
+    font-weight: bold;
+    margin-top: 30px;
+}
+hr{
+    border: 1px solid tomato;
+
+}
+.btn-submit{
+    background-color: tomato;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding-left:20px;
+    padding-right:20px;
+    border-radius:10px;
+}

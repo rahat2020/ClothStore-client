@@ -1,86 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Products.css';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import productOne from '../../img/productOne.jpg';
-import productTwo from '../../img/productTwo.jpg';
-import productThree from '../../img/productThree.jpg';
-import productFour from '../../img/productFour.jpg';
 const Products = () => {
+    const [product, setProduct] = useState([])
+    useEffect(() => {
+        const url = `http://localhost:5000/ShowProduct`
+        fetch(url)
+            .then(response => response.json())
+            .then(data => setProduct(data))
+    }, [])
     return (
-        <div className="container d-flex flex-wrap">
-            <h2 class="title">latest<span className="title-half">products</span></h2>
-            <div className="card-deck d-flex justify-content-center mt-5">
-                <div class="card" style={{ width: '18rem', height: '0px' }}>
-                    <img src={productOne} class="card-img-top img-fluid card-img" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <div className="ratings">
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star-half" />
-                        </div>
-                        <div className="bottom d-flex justify-content-between mt-1 pt-1">
-                            <h4 className="price">$43</h4>
-                            <button className="btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style={{ width: '30rem', height: '0px' }}>
-                    <img src={productTwo} class="card-img-top card-img img-fluid" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <div className="ratings">
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star-half" />
-                        </div>
-                        <div className="bottom d-flex justify-content-between mt-1 pt-1">
-                            <h4 className="price">$43</h4>
-                            <button className="btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style={{ width: '18rem', height: '0px' }}>
-                    <img src={productThree} class="card-img-top card-img img-fluid" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <div className="ratings">
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star-half" />
-                        </div>
-                        <div className="bottom d-flex justify-content-between mt-1 pt-1">
-                            <h4 className="price">$43</h4>
-                            <button className="btn-buy">Buy now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style={{ width: '18rem', height: '0px' }}>
-                    <img src={productFour} class="card-img-top card-img img-fluid" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <div className="ratings">
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star" />
-                            <FontAwesomeIcon icon={faStar} className="star-half" />
-                        </div>
-                        <div className="bottom d-flex justify-content-between mt-1 pt-1">
-                            <h4 className="price">$43</h4>
-                            <button className="btn-buy">Buy now</button>
-                        </div>
-                    </div>
+        <section id="services">
+            <div className=" mt-5 ">
+                <h2 class="title">Features<span className="title-half">Products</span></h2>
+            </div>
+
+            <div className="container">
+                <div className="row ">
+                    {
+                        product.map((items) => (
+
+                            <div className="col-md-3 col-sm-2 mb-5">
+                                <div className="card-deck card-img">
+                                    <div class="card">
+                                        <img src={items.imgURL} class="card-img-top " style={{ height: "300px" }} alt="..." />
+                                        <div class="card-body">
+                                            <h5 class="card-title">{items.name}</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <div className="d-flex justify-content-between">
+                                                <p>${items.price}</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        ))
+                    }
                 </div>
             </div>
-        </div >
+        </section >
     );
 };
 
