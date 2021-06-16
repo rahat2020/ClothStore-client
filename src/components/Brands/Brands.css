@@ -1,0 +1,27 @@
+.brand-container{
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.small-container{
+    max-width: 1500px;
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.brands{
+    margin: 100px auto;
+}
+.col-5 {
+    width: 50px;
+}
+.img-container img{
+    cursor: pointer;
+    transition: transform 0.5s;
+    filter: grayscale(100%);
+}
+.img-container img:hover{
+    filter: grayscale(0);
+    transform:translateX(5px)
+}

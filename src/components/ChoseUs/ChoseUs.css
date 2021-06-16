@@ -1,0 +1,40 @@
+.div-container{
+    padding:40px;
+}
+.img-responsive{
+    width:70%;
+    border-radius: 15px;
+    height:450px;
+    transition: transform 0.5s;
+}
+.img-responsive:hover{
+    transform: translateX(10px);
+
+}
+.text-style{
+    text-align: left;
+    max-width: 400px;
+    
+    margin: 40px;
+
+}
+.text-title{
+    font-weight: bold;
+    
+
+}
+.text-title-half{
+    color: tomato;letter-spacing: 3px;
+     transition: width 2s, height 4s;
+}
+.text-para{
+    color: gray; font-size: 15px;
+}
+hr{
+    color: tomato;
+    border: 1px solid rgba(212, 120, 103, 0.849);
+}
+.quote{
+    font-size:20px; padding-right: 10px;
+}
+

@@ -8,8 +8,8 @@ import productThree from '../../img/productThree.jpg';
 import productFour from '../../img/productFour.jpg';
 const Products = () => {
     return (
-        <div className="container">
-            <h2 class="title">features<span className="title-half">products</span></h2>
+        <div className="container d-flex flex-wrap">
+            <h2 class="title">latest<span className="title-half">products</span></h2>
             <div className="card-deck d-flex justify-content-center mt-5">
                 <div class="card" style={{ width: '18rem', height: '0px' }}>
                     <img src={productOne} class="card-img-top img-fluid card-img" alt="..." />

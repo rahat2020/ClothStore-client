@@ -1,25 +1,43 @@
-import React from 'react';
-import './Dashboard.css';
+import React from "react";
+import { Link, useRouteMatch } from "react-router-dom";
+import RouteDiv from "../RouteDiv/RouteDiv";
+import "./Dashboard.css";
 const Dashboard = () => {
+  let { url } = useRouteMatch();
+  const linkStyle = {
+    textDecoration: "none",
+    color: "white",
     
-    return (
-        <div>
-            <div class="sidenav">
-            <link to={`${url}/rendering`}>Rendering with React</link>
-                <a href="#services">Services</a>
-                <a href="#clients">Clients</a>
-                <a href="#contact">Contact</a>
-                {/* <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#clients">Clients</a>
-                <a href="#contact">Contact</a> */}
-            </div>
+  };
+  return (
+    <div>
+      <div class="sidenav">
+        <ul>
+          <li>
+            <Link style={linkStyle} to={`${url}/addReview`}>
+              Add Review{" "}
+            </Link>
+            <br />
+            <Link style={linkStyle} to={`${url}/addProducts`}>
+              Add Products
+            </Link>
+            <br />
+            <Link style={linkStyle} to={`${url}/manageProducts`}>
+              Manage Products
+            </Link>
+            <br />
+            <Link style={linkStyle} to={`${url}/admin`}>
+              Admin
+            </Link>
+          </li>
+        </ul>
+      </div>
 
-            <div class="main"> 
-            <h2> this li</h2>
-            </div>
-        </div>
-    );
+      <div class="main">
+        <RouteDiv></RouteDiv>
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;

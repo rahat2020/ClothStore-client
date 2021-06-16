@@ -1,0 +1,30 @@
+.social-icon{
+    font-size:20px;
+    margin: 15px;
+    transition: color 0.5s;
+}
+.social-icon:hover{
+    color: tomato;
+
+   
+}
+.footer-container{
+    background-color: tomato;
+}
+.footer-text{
+    text-align: left;
+}
+.pd-link{
+    color: tomato;
+    transition: color 0.5s;
+}
+.pd-link:hover{
+    color: aqua;
+}
+.Copyright{
+    color: white;
+    transition: color 0.5s;
+}
+.Copyright:hover{
+    color: aqua;
+}
