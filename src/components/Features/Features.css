@@ -5,3 +5,15 @@
 .img-style:hover{
     transform: translateX(-10px);
 }
+
+
+@media only screen and (max-width:600px) {
+    .feature-style{
+       display: flex;
+       /* justify-content: center; */
+       margin: auto;
+       padding: 10px 0;
+       width: 100%;
+       align-items: center;
+    }
+}

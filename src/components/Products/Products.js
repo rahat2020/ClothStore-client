@@ -25,14 +25,21 @@ const Products = () => {
 
                             <div className="col-md-3 col-sm-2 mb-5">
                                 <div className="card-deck card-img">
-                                    <div class="card">
-                                        <img src={items.imgURL} class="card-img-top " style={{ height: "300px" }} alt="..." />
+                                    <div class="card card-style">
+                                        <img src={items.imgURL} class="card-img-top " style={{ height: "230px" }} alt="..." />
                                         <div class="card-body">
                                             <h5 class="card-title">{items.name}</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div className="d-flex justify-content-between">
-                                                <p>${items.price}</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            <p class="card-text">Some quick example text to build.</p>
+                                            <div className="ratings">
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar} />
+                                            </div>
+                                            <div className="d-flex justify-content-between mt-2">
+                                                <h5 className="card-price">${items.price}</h5>
+                                                <button href="#" class="btn-buy">Buy Now &#10143;</button>
                                             </div>
                                         </div>
                                     </div>

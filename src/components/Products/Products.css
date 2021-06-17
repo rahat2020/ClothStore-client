@@ -1,5 +1,8 @@
 .card-img{
     transition: transform 0.5s;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
     border: none;
 }
 .card-img:hover{
@@ -27,4 +30,31 @@
 }
 .title-half{
     color: tomato;
+}
+.card{
+    width:100%;
+}
+.card-price{
+    font-size:20px;
+}
+.btn-buy{
+    border:none;
+    background-color: tomato;
+    border-radius:5px;
+    color: white;
+    transition: background 0.5s;
+
+}
+.btn-buy:hover{
+    background: gray;
+    color: black;
+}
+
+.ratings{
+    color:gold;
+    margin-top: 4px;
+}
+.card-text{
+    color: gray;
+    font-size:14px ;
 }
