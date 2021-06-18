@@ -38,6 +38,9 @@ const Navbar = () => {
             <li class="nav-item">
               <Link class="nav-link" style={navStyle} to="/dashboard/addReview" tabindex="-1">Dashboard</Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link" style={navStyle} to="/login" tabindex="-1">Login</Link>
+            </li>
           </ul>
         </div>
       </nav>

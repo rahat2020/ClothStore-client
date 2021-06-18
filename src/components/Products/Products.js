@@ -3,7 +3,6 @@ import './Products.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import productOne from '../../img/productOne.jpg';
 const Products = () => {
     const [product, setProduct] = useState([])
     useEffect(() => {
@@ -39,7 +38,7 @@ const Products = () => {
                                             </div>
                                             <div className="d-flex justify-content-between mt-2">
                                                 <h5 className="card-price">${items.price}</h5>
-                                                <button href="#" class="btn-buy">Buy Now &#10143;</button>
+                                                <Link to={`/checkout/${items._id}`}><button href="#" class="btn-buy">Buy Now &#10143;</button></Link>
                                             </div>
                                         </div>
                                     </div>
