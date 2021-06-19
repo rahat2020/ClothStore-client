@@ -1,7 +1,8 @@
 import React, {useContext, useEffect, useState } from 'react';
+import './Checkout.css';
 import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import Navbar from '../../Navbar/Navbar';
+// import Navbar from '../../Navbar/Navbar';
 
 
 const Checkout = () => {
@@ -35,17 +36,17 @@ const Checkout = () => {
             .then(response => response.json())
             .then(data => setCheckout(data))
     }, [])
+    
     const checkOutDetails = checkout.find(pd => pd?._id === _id)
     console.log(checkOutDetails)
     
     return (
-        <div className="me-5 p-5">
-            <Navbar/>
+        <div className="me-5 p-5 checkout-container">
             <div style={{ margin: 'auto', textAlign: 'center' }}>
                 <h3> Confirm Your Order</h3>
             </div>
             <div className="">
-                <table class="table bcheckout table-light " style={{width:'90%', margin:'auto'}}>
+                <table class="table  table-light " style={{width:'90%', margin:'auto'}}>
                     <thead>
                         <tr>
                             <th>#</th>

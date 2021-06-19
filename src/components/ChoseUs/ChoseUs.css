@@ -6,6 +6,7 @@
     border-radius: 15px;
     height:450px;
     transition: transform 0.5s;
+    margin-left: 100px;
 }
 .img-responsive:hover{
     transform: translateX(10px);

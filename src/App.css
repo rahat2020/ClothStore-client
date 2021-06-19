@@ -21,7 +21,9 @@ color: gray;
 .sign-google{
   border: 1px solid #80808059;
   border-radius:  5px;
-  color: gray;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(22, 22, 184, 0.705);
 }
 .google-text{
   text-align: center;

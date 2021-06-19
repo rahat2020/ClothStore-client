@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Testimonial.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
-import userOne from '../../img/userOne.png';
-import userTwo from '../../img/userTwo.png';
-import userThree from '../../img/userThree.png';
+import { faQuoteLeft, faStar } from '@fortawesome/free-solid-svg-icons'
 const Testimonial = () => {
     const [comment, setComment] = useState([])
     console.log(comment)
@@ -15,30 +12,31 @@ const Testimonial = () => {
             .then(data => setComment(data))
     }, [])
     return (
-        <div>
-            {
-                comment.map((review) => (
-                    <div class="container testi-container">
-                        <h2 class="title">Testi<span className="title-half">Monial</span></h2>
-                        <div id="demo" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="carousel-caption">
-                                        <p>  <FontAwesomeIcon icon={faQuoteLeft} className="quote" /> {review.comment}  <FontAwesomeIcon icon={faQuoteRight} className="quote" /> </p> <img src={review.imgURL} alt="" />
-                                        <div id="image-caption">{review.name}</div>
-                                        <div id="caption">{review.designation}</div>
-                                    </div>
+        <div className="container">
+            <h2 class="title">Testi<span className="title-half">Monial</span></h2>
+
+            <div className="row">
+                {
+                    comment.map((review) => (
+                        <div className="col-md-4 shadow-sm">
+                            <div class="card  testimonial-style">
+                                <FontAwesomeIcon icon={faQuoteLeft} className="test-icon mt-3 mb-3" />
+                                <p className="test-description">{review.comment}</p>
+                                <div class="start-container mb-2">
+                                    <FontAwesomeIcon icon={faStar} className="test-start" />
+                                    <FontAwesomeIcon icon={faStar} className="test-start" />
+                                    <FontAwesomeIcon icon={faStar} className="test-start" />
+                                    <FontAwesomeIcon icon={faStar} className="test-start" />
+                                    <FontAwesomeIcon icon={faStar} className="test-start" />
                                 </div>
-
-
-                            </div> <a class="carousel-control-prev" href="#demo" data-slide="prev">   <FontAwesomeIcon icon={faArrowRight} className="arrow" /> </a>
-                            <a class="carousel-control-next" href="#demo" data-slide="next">  <FontAwesomeIcon icon={faArrowLeft} className="arrow" /> </a>
+                                <img src={review.imgURL} className="test-img" alt="" />
+                                <h4 className="text-center test-title">{review.name}</h4>
+                                <h6  className="text-center mb-3 test-designation">{review.designation}</h6>
+                            </div>
                         </div>
-                    </div>
-
-                ))
-            }
-
+                    ))
+                }
+            </div>
         </div>
     );
 };

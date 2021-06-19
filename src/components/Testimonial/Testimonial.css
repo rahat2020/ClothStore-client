@@ -1,108 +1,50 @@
-body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-   
-    font-family: 'Open Sans'
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+.card{
+    border: none;
+    
 }
-
-#demo {
-    background: linear-gradient(112deg, #e9d3d3 50%, antiquewhite 50%);
-    max-width: 900px;
-    margin: auto
+.testimonial-style{
+    transition: transform 0.5s;
 }
-.testi-container{
-    /* background-color: rgb(233, 150, 150); */
-    padding: 50px;
+.testimonial-style:hover{
+    transform: translateX(10px);
 }
-.carousel-caption {
-    position: initial;
-    z-index: 10;
-    padding: 5rem 8rem;
-    color: rgba(78, 77, 77, 0.856);
+.test-icon{
+    color: tomato;
+    width: 50%;
+    margin:auto;
+    font: 600; font-size:30px;
+}
+.test-description{
+    color: gray;
     text-align: center;
-    font-size: 1.2rem;
-    font-style: italic;
-    font-weight: bold;
-    line-height: 2rem
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+.test-description:hover{
+    color: tomato;
+    font-weight: 500;
+}
+.start-container{
+    color: rgb(212, 184, 24);
+    width: 27%;
+    margin-top: 10px;
+    margin: auto;
 }
 
-@media(max-width:767px) {
-    .carousel-caption {
-        position: initial;
-        z-index: 10;
-        padding: 3rem 2rem;
-        color: rgba(78, 77, 77, 0.856);
-        text-align: center;
-        font-size: 0.7rem;
-        font-style: italic;
-        font-weight: bold;
-        line-height: 1.5rem
-    }
+.test-img{
+    margin-left: 121px;
+    margin-bottom: 20px;
+    width: 100px;
+    border-radius: 21px;
+    height: 104px;
 }
-
-.carousel-caption img {
-    width: 6rem;
-    border-radius: 5rem;
-    margin-top: 2rem
+.test-title{
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.719);
+    font-family: 'Oswald', sans-serif;
 }
-
-@media(max-width:767px) {
-    .carousel-caption img {
-        width: 4rem;
-        border-radius: 4rem;
-        margin-top: 1rem
-    }
-}
-
-#image-caption {
-    font-style: normal;
-    font-size: 1rem;
-    margin-top: 0.5rem
-}
-
-@media(max-width:767px) {
-    #image-caption {
-        font-style: normal;
-        font-size: 0.6rem;
-        margin-top: 0.5rem
-    }
-}
-
-.arrow{
-    background-color: rgb(223, 56, 89);
-    color: rgb(241, 237, 237);
-    max-width:100px;
-    border-radius:3px;
-    height:25px;
-}
-
-@media(max-width:767px) {
-    i {
-        padding: 0.8rem
-    }
-}
-
-.carousel-control-prev {
-    justify-content: flex-start
-}
-
-.carousel-control-next {
-    justify-content: flex-end
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    transition: none;
-    opacity: unset;
-}
-#caption{
-    color: #716363;
-    font-size: 13px;
-    margin-top: -4px;
-}
-
-hr{
-    width:100px; border: 1px solid #fff;
-    background: tomato;
+.test-designation{
+    color:rgba(128, 128, 128, 0.829);
+    font-family: 'Oswald', sans-serif;
 }
