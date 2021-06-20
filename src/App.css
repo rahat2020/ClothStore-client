@@ -8,6 +8,9 @@
  border-radius: 5px;
 
 }
+.login-container{
+  width: 60%;
+}
 .login-btn:hover{
   background: gray;
 }

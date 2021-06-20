@@ -11,6 +11,7 @@ const Products = () => {
             .then(response => response.json())
             .then(data => setProduct(data))
     }, [])
+    console.log(product)
     return (
         <section id="services">
             <div className=" mt-5 ">
@@ -24,11 +25,11 @@ const Products = () => {
 
                             <div className="col-md-3 col-sm-2 mb-5">
                                 <div className="card-deck card-img">
-                                    <div class="card card-style">
+                                    <div className="card card-style">
                                         <img src={items.imgURL} class="card-img-top " style={{ height: "230px" }} alt="..." />
-                                        <div class="card-body">
-                                            <h5 class="card-title">{items.name}</h5>
-                                            <p class="card-text">Some quick example text to build.</p>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{items.name}</h5>
+                                            <p className="card-text">Some quick example text to build.</p>
                                             <div className="ratings">
                                                 <FontAwesomeIcon icon={faStar} />
                                                 <FontAwesomeIcon icon={faStar} />
@@ -38,7 +39,7 @@ const Products = () => {
                                             </div>
                                             <div className="d-flex justify-content-between mt-2">
                                                 <h5 className="card-price">${items.price}</h5>
-                                                <Link to={`/checkout/${items._id}`}><button href="#" class="btn-buy">Buy Now &#10143;</button></Link>
+                                                <Link to={`/checkout/${items._id}`}><button href="#" className="btn-buy">Buy Now &#10143;</button></Link>
                                             </div>
                                         </div>
                                     </div>

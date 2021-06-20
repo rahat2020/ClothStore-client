@@ -1,0 +1,17 @@
+.order-container{
+    margin: auto;
+    text-align:center;
+}
+.table-container{
+    width:80%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:  wrap;
+
+}
+hr{
+    border:1px solid gray;
+    width:100px;
+    margin-top: -10px;
+}

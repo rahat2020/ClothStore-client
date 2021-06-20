@@ -1,8 +1,7 @@
-import React, {useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Checkout.css';
 import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
-// import Navbar from '../../Navbar/Navbar';
 
 
 const Checkout = () => {
@@ -10,11 +9,11 @@ const Checkout = () => {
     console.log(checkout)
     const [loggedInUser] = useContext(UserContext);
 
-    const {_id} = useParams()
-    console.log(_id)
-
+    const { productID } = useParams()
+    console.log('productID', productID)
+    
     const handleSubmit = () => {
-        const items = { ...loggedInUser, product: checkOutDetails, date: new Date() }
+        const items = { ...loggedInUser, product: checkout, date: new Date() }
         const url = `http://localhost:5000/itemOrdered`
         fetch(url, {
             method: 'POST',
@@ -31,22 +30,22 @@ const Checkout = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/finalOrder`
-         fetch(url)
+        const url = `http://localhost:5000/products/${productID}`
+        fetch(url)
             .then(response => response.json())
             .then(data => setCheckout(data))
-    }, [])
-    
-    const checkOutDetails = checkout.find(pd => pd?._id === _id)
-    console.log(checkOutDetails)
-    
+    }, [productID])
+
+   
+
     return (
         <div className="me-5 p-5 checkout-container">
             <div style={{ margin: 'auto', textAlign: 'center' }}>
                 <h3> Confirm Your Order</h3>
+                <h2 style={{ color: '#ddd' }}> id: {productID}</h2>
             </div>
             <div className="">
-                <table class="table  table-light " style={{width:'90%', margin:'auto'}}>
+                <table className="table  table-light " style={{ width: '90%', margin: 'auto' }}>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -57,13 +56,13 @@ const Checkout = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>{checkOutDetails?.name}</td>
-                        <td>{checkOutDetails?.price}</td>
-                        <td  className="imgStyle"><img style={{width:'90px'}}src={checkOutDetails?.imgURL} rounded  alt=""/></td>
-                        <td> <Link to={`/order/${_id}`}><button className="height:30px btn btn-primary" onClick={handleSubmit} >order now </button></Link></td>
-                    </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>{checkout.name}</td>
+                            <td>{checkout.price}</td>
+                            <td className="imgStyle"><img style={{ width: '90px' }} src={checkout.imgURL} rounded alt="" /></td>
+                            <td> <Link to={`/order/${productID}`}><button className="height:30px btn btn-primary" onClick={handleSubmit} >Checkout now </button></Link></td>
+                        </tr>
 
                     </tbody>
                 </table>

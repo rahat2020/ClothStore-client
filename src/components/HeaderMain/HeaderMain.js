@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './HeaderMain.css';
 import image1 from '../../img/image1.png';
+import { Link } from 'react-router-dom';
 export class HeaderMain extends Component {
     render() {
         return (
@@ -12,7 +13,7 @@ export class HeaderMain extends Component {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, accusantium natus? <br /> Ipsa
                                 ratione deleniti cumque.</p>
                             <div className="">
-                                <a href="" class="btn">Explore Now &#10143;</a>
+                                <Link href="" className="btn">Explore Now &#10143;</Link>
                             </div>
                         </div>
                     </div>
