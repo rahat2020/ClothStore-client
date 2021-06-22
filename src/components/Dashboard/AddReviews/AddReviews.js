@@ -63,7 +63,6 @@ const AddReviews = () => {
     return (
         <div className="mt-3">
             <h4 className="product-title"> ADD REVIEW</h4>
-            <hr />
             <form className="mt-3 border p-4 shadow-sm  form-style">
                 <div class="mb-3">
                     <input type="email" class="form-control" onBlur={handleChange} id="exampleInputEmail1" placeholder="Your name" aria-describedby="emailHelp" name="name" />

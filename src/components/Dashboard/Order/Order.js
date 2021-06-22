@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Navbar from '../../Navbar/Navbar';
 import './Order.css'
 const Order = () => {
     const [order, setOrder] = useState([])
+    console.log(order)
+    const { productID} = useParams()
+    console.log(productID)
     const [loggedInUser] = useContext(UserContext);
     useEffect(() => {
         fetch('http://localhost:5000/orderedItem?email=' + loggedInUser.email)
             .then((response) => response.json())
             .then(data => setOrder(data))
-    })
+    }, [setOrder])
     return (
         <div className="order-container">
             <Navbar />
@@ -23,8 +27,9 @@ const Order = () => {
                         <tr>
                             <th>#</th>
                             <th> Name</th>
-                            <th>Description</th>
+                            <th>Price</th>
                             <th>images</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,8 +38,9 @@ const Order = () => {
                                 <tr>
                                     <td>{index}</td>
                                     <td>{itemOrder.product?.name}</td>
-                                    <td>{itemOrder.product?.price}</td>
-                                    <td className="imgStyle"><img style={{ height: '100px', width: '200px' }} src={itemOrder.product?.imgURL} alt="" /></td>
+                                    <td>${itemOrder.product?.price}</td>
+                                    <td className="imgStyle"><img style={{ height: '50px', width: '100px' }} src={itemOrder.product?.imgURL} alt="" /></td>
+                                    <button className="pay-btn">Pay now</button>
                                 </tr>
                             ))
                         }

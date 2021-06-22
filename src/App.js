@@ -26,12 +26,12 @@ function App() {
           <Route path="/login">
             <Login/>
           </Route>
-          <Route path="/checkout/:productID">
+          <PrivateRoute path="/checkout/:productID">
             <Checkout/>
-          </Route>
-          <Route path="/order/:productID">
+          </PrivateRoute>
+          <PrivateRoute path="/order/:productID">
             <Order/>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/dashboard">
               <Dashboard/>
           </PrivateRoute>

@@ -5,69 +5,71 @@ import "firebase/auth";
 import firebaseConfig from '../firebase.config';
 import { UserContext } from '../../../App';
 import { useHistory, useLocation } from 'react-router';
+
+
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+} else {
+    firebase.app();
+}
 const Login = () => {
-    const [ setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory()
     const location = useLocation()
     let { from } = location.state || { from: { pathname: "/" } };
 
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    } else {
-        firebase.app();
-    }
     const [newUser, setNewUser] = useState(false)
-
     const [user, setUser] = useState({
         isSignedIn: false,
+        // newUser: false,
         name: '',
         email: '',
-        photoURl: ''
+        password: '',
+        phone: '',
     })
-
-    const handleSignWithGoogle = () => {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth()
-            .signInWithPopup(provider)
-            .then((result) => {
-                const { displayName, email, photoURl } = result.user;
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        firebase.auth().signInWithPopup(provider)
+            .then(res => {
+                const { displayName, email, photoURL } = res.user;
                 const signedInUser = {
                     isSignedIn: true,
                     name: displayName,
                     email: email,
-                    photoURl: photoURl
+                    photo: photoURL
                 }
-                setUser(signedInUser);
+                setUser(signedInUser)
                 setLoggedInUser(signedInUser)
                 history.replace(from);
-                console.log(displayName, email, photoURl)
+                console.log(displayName, email, photoURL);
+            })
+            // console.log('sign in clicked');
+            .catch(error => {
+                console.log(error);
+                console.log(error.message);
 
-            }).catch((error) => {
-                // Handle Errors here.
-                var errorCode = error.code;
-                console.log(errorCode)
-                console.log(error)
-            });
-
+            })
     }
-    // const handleGoogleSignOut = () => {
-    //     firebase.auth().signOut()
-    //         .then(() => {
-    //             const signOutUser = {
-    //                 isSignedIn: false,
-    //                 name: '',
-    //                 photo: '',
-    //                 email: '',
-    //                 error: '',
-    //                 success: false
-    //             }
-    //             setUser(signOutUser)
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //             console.log(err.message);
-    //         })
-    // }
+    const handleGoogleSignOut = () => {
+        firebase.auth().signOut()
+            .then(() => {
+                const signOutUser = {
+                    isSignedIn: false,
+                    name: '',
+                    photo: '',
+                    email: '',
+                    error: '',
+                    success: false
+                }
+                setUser(signOutUser)
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(err.message);
+            })
+    }
+
     const handleBlur = (e) => {
         console.log(e.target.name, e.target.value);
         let isFormedValid = true;
@@ -89,7 +91,6 @@ const Login = () => {
             setUser(newUserInfo);
         }
     }
-
     const handleSubmit = (e) => {
         if (newUser && user.email && user.password) {
             firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -98,8 +99,8 @@ const Login = () => {
                     newUserInfo.error = '';
                     newUserInfo.success = true;
                     setUser(newUserInfo);
-                    // setLoggedInUser(newUserInfo);
-                    // history.replace(from);
+                    setLoggedInUser(newUserInfo);
+                    history.replace(from);
                     console.log(res)
 
                 })
@@ -136,6 +137,7 @@ const Login = () => {
         }
         e.preventDefault();
     }
+
     const loginForm = {
         marginLeft: '400px',
         width: '60%'
@@ -148,32 +150,32 @@ const Login = () => {
 
     return (
         <div className="login-container">
-        
+
             <div className="mt-3">
                 <form className="mt-3 border p-4 shadow-sm" style={loginForm} >
                     <h2 className="title">Cloth<span className="title-half">Store</span></h2>
 
-                    <div className="d-flex justify-content-between align-items-center sign-google p-1 mb-3" onClick={handleSignWithGoogle}>
-                        <img style={{ borderRadius: '30%', cursor: 'pointer', width: '50px' }} 
+                    <div className="d-flex justify-content-between align-items-center sign-google p-1 mb-3" onClick={handleGoogleSignIn}>
+                        <img style={{ borderRadius: '30%', cursor: 'pointer', width: '50px' }}
                             src="http://www.androidpolice.com/wp-content/themes/ap2/ap_resize/ap_resize.php?src=http%3A%2F%2Fwww.androidpolice.com%2Fwp-content%2Fuploads%2F2015%2F10%2Fnexus2cee_Search-Thumb-150x150.png&w=150&h=150&zc=3" alt="" />
                         <h5 className="google-text">sign in with google</h5>
                     </div>
 
                     {
                         newUser && <div className="mb-3 mt-4">
-                            <input type="text" className="form-control" onBlur={handleBlur} id="exampleInputEmail1"
-                             placeholder="Your name" aria-describedby="emailHelp" name="name" required/>
+                            <input type="text" className="form-control" onBlur={handleBlur}
+                                placeholder="Your name" aria-describedby="emailHelp" name="name" required />
                         </div>
                     }
                     <div className="mb-3">
-                        <input type="email" className="form-control" onBlur={handleBlur} placeholder="Your email" id="exampleInputPassword1" name="email" required/>
+                        <input type="email" className="form-control" onBlur={handleBlur} placeholder="Your email" name="email" required />
                     </div>
                     <div className="mb-3">
-                        <input type="password" className="form-control" onBlur={handleBlur} placeholder="your password" id="exampleInputPassword1" 
-                        name="password" required/>
+                        <input type="password" className="form-control" onBlur={handleBlur} placeholder="your password"
+                            name="password" required />
                     </div>
                     <button type="submit" className="text-center login-btn" style={{ btnStyle }} onSubmit={handleSubmit}>Submit</button>
-                    
+
                     <div className="a mt-3">
                         {
                             newUser ? 'already have an account?' : "Don't have an account? "

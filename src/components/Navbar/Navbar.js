@@ -24,7 +24,7 @@ const Navbar = () => {
         <div class="collapse navbar-collapse  " id="navbarTogglerDemo02">
           <ul class="navbar-nav f-right ml-auto">
             <li class="nav-item active">
-              <Link class="nav-link" to="/home" style={home}>Home <span class="sr-only">(current)</span></Link>
+              <Link class="nav-link" to="/" style={home}>Home <span class="sr-only">(current)</span></Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" style={navStyle} to="/product">Product</Link>

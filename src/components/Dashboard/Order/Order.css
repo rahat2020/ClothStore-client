@@ -11,7 +11,22 @@
 
 }
 hr{
-    border:1px solid gray;
-    width:100px;
-    margin-top: -10px;
+    width: 151px;
+    background: tomato;
+    margin-top: -7px;
+}
+.pay-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 8px 22px 8px 22px;
+    background: tomato;
+    margin-top: 46px;
+    border-radius: 5px;
+    color: white;
+    transition: background 0.5s;
+}
+.pay-btn:hover{
+    background: gray;
 }
