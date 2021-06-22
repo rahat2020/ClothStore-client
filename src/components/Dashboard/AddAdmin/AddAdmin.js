@@ -107,7 +107,7 @@ const AddAdmin = () => {
                             {
                                 admin.map((itemOrder, index) => (
                                     <tr>
-                                        <td>{index}</td>
+                                        <td className="">{index}</td>
                                         <td>{itemOrder.name}</td>
                                         <td>{itemOrder.designation}</td>
                                         <td className="imgStyle"><img style={{ height: '100px', width: '100px' }} src={itemOrder.imgURL} alt="" /></td>
