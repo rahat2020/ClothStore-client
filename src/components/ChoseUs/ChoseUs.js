@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 import choseOne from "../../img/choseOne.jpg";
 import "./ChoseUs.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ChoseUs = () => {
+  // adding animations for card
+  useEffect(() => {
+    AOS.init({ offset: 120, duration: 2000 });
+  })
   return (
     <section>
       <div className="div-container ">
-        <h2 class="title">Chose<span className="title-half">Us</span></h2>
+        <h2 data-aos="fade-up" class="title">Chose<span className="title-half">Us</span></h2>
 
         <div className="row">
           <div className="col-md-6">
-            <img className="img-fluid img-responsive" src={choseOne} alt="" />
+            <img data-aos="fade-left" className="img-fluid img-responsive" src={choseOne} alt="" />
           </div>
-          <div className="col-md-6 text-style ">
+          <div data-aos="fade-right" className="col-md-6 text-style ">
             <h1 className="text-title">Why<span className="text-title-half">Chose</span>us</h1>
             <hr />
             <p className="text-para">

@@ -1,16 +1,20 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import './HeaderMain.css';
 import image1 from '../../img/image1.png';
 import { Link } from 'react-router-dom';
-export class HeaderMain extends Component {
-    render() {
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+const HeaderMain = ()=> {
+    useEffect(() => {
+        AOS.init({ offset: 120, duration: 2000});
+    })
         return (
             <div>
-                <div className="row">
+                <div data-aos="fade-up" className="row data-aos=fade-up">
                     <div className="col-md-6 d-flex align-items-center ">
                         <div className="header-title ">
-                            <h1 >Give you Workout <br /> A new style</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, accusantium natus? <br /> Ipsa
+                            <h1 data-aos="fade-left">Give you Workout <br /> A new style</h1>
+                            <p data-aos="fade-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, accusantium natus? <br /> Ipsa
                                 ratione deleniti cumque.</p>
                             <div className="">
                                 <Link href="" className="btn">Explore Now &#10143;</Link>
@@ -26,6 +30,6 @@ export class HeaderMain extends Component {
             </div>
         )
     }
-}
+
 
 export default HeaderMain

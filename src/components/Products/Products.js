@@ -3,6 +3,8 @@ import './Products.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const Products = () => {
     const [product, setProduct] = useState([])
     useEffect(() => {
@@ -12,6 +14,11 @@ const Products = () => {
             .then(data => setProduct(data))
     }, [])
     console.log(product)
+
+    // adding animations for card
+    useEffect(() => {
+        AOS.init({ offset: 120, duration: 2000});
+    })
     return (
         <section id="services">
             <div className=" mt-5 ">
@@ -23,7 +30,7 @@ const Products = () => {
                     {
                         product.map((items) => (
 
-                            <div className="col-md-3 col-sm-2 mb-5">
+                            <div data-aos="zoom-in-down" className="col-md-3 col-sm-2 mb-5">
                                 <div className="card-deck card-img">
                                     <div className="card card-style">
                                         <img src={items.imgURL} class="card-img-top " style={{ height: "230px" }} alt="..." />
