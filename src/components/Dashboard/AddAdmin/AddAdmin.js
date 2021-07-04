@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
 import './AddAdmin.css'
 import axios from 'axios';
 
 const AddAdmin = () => {
-    const location = useLocation
     const [service, setService] = useState({
         name: '',
         email: '',

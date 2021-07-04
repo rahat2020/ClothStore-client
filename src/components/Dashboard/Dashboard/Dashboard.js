@@ -4,7 +4,6 @@ import { faPlus, faHome, faComment, faTasks, faUserShield, faListOl} from '@fort
 import { Link, useRouteMatch } from "react-router-dom";
 import RouteDiv from "../RouteDiv/RouteDiv";
 import "./Dashboard.css";
-// import Navbar from "../../Navbar/Navbar";
 const Dashboard = () => {
   let { url } = useRouteMatch();
   const linkStyle = {
@@ -14,7 +13,6 @@ const Dashboard = () => {
   };
   return (
     <div>
-      {/* <Navbar></Navbar> */}
       <div class="sidenav">
         <ul>
           <li>

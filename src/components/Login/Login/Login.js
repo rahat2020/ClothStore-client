@@ -14,7 +14,7 @@ if (!firebase.apps.length) {
     firebase.app();
 }
 const Login = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [setLoggedInUser] = useContext(UserContext);
     const history = useHistory()
     const location = useLocation()
     let { from } = location.state || { from: { pathname: "/" } };
@@ -51,24 +51,25 @@ const Login = () => {
 
             })
     }
-    const handleGoogleSignOut = () => {
-        firebase.auth().signOut()
-            .then(() => {
-                const signOutUser = {
-                    isSignedIn: false,
-                    name: '',
-                    photo: '',
-                    email: '',
-                    error: '',
-                    success: false
-                }
-                setUser(signOutUser)
-            })
-            .catch(err => {
-                console.log(err);
-                console.log(err.message);
-            })
-    }
+
+    // const handleGoogleSignOut = () => {
+    //     firebase.auth().signOut()
+    //         .then(() => {
+    //             const signOutUser = {
+    //                 isSignedIn: false,
+    //                 name: '',
+    //                 photo: '',
+    //                 email: '',
+    //                 error: '',
+    //                 success: false
+    //             }
+    //             setUser(signOutUser)
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //             console.log(err.message);
+    //         })
+    // }
 
     const handleBlur = (e) => {
         console.log(e.target.name, e.target.value);
