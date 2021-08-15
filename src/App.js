@@ -12,6 +12,7 @@ import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import Checkout from './components/Dashboard/Checkout/Checkout';
 import Order from './components/Dashboard/Order/Order';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -19,6 +20,10 @@ function App() {
     <div className="app">
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>
+          <MessengerCustomerChat
+            pageId="101340032265864"
+            appId="612520889736567"
+          />
           <Switch>
             <Route exact path="/">
               <Home />
