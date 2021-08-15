@@ -10,18 +10,18 @@ const HeaderMain = ()=> {
     })
         return (
             <div>
-                <div data-aos="fade-up" className="row data-aos=fade-up">
+                <div  className="row data-aos=fade-up w-100">
                     <div className="col-md-6 d-flex align-items-center ">
                         <div className="header-title ">
-                            <h1 data-aos="fade-left">Give you Workout <br /> A new style</h1>
-                            <p data-aos="fade-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, accusantium natus? <br /> Ipsa
+                            <h1 data-aos="fade-up">Give you Workout <br /> A new style</h1>
+                            <p data-aos="fade-down">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, accusantium natus? <br /> Ipsa
                                 ratione deleniti cumque.</p>
                             <div className="">
                                 <Link href="" className="btn">Explore Now &#10143;</Link>
                             </div>
                         </div>
                     </div>
-                    <div className=" col-md-6">
+                    <div data-aos="fade-up" className=" col-md-6">
                         <div className="header-img">
                             <img className="img-fluid" src={image1} alt="" />
                         </div>

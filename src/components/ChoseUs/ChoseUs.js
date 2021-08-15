@@ -12,14 +12,14 @@ const ChoseUs = () => {
   })
   return (
     <section>
-      <div className="div-container ">
+      <div className="div-container w-100">
         <h2 data-aos="fade-up" class="title">Chose<span className="title-half">Us</span></h2>
 
         <div className="row">
-          <div className="col-md-6">
-            <img data-aos="fade-left" className="img-fluid img-responsive" src={choseOne} alt="" />
+          <div className="col-md-6 col-chose-left ">
+            <img data-aos="fade-up" className="img-responsive" src={choseOne} alt="" />
           </div>
-          <div data-aos="fade-right" className="col-md-6 text-style ">
+          <div data-aos="fade-down" className="col-md-6 text-style ">
             <h1 className="text-title">Why<span className="text-title-half">Chose</span>us</h1>
             <hr />
             <p className="text-para">

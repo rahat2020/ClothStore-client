@@ -10,11 +10,11 @@ const Offer = () => {
         AOS.init({ offset: 120, duration: 2000});
     })
     return (
-        <div data-aos="fade-right" className="offer">
+        <div data-aos="fade-up" className="offer w-100">
              <h2 className="title">Black<span className="title-half">Friday</span></h2>
             <div className="row">
-                <div className="col-md-6">
-                    <img data-aos="fade-up" className="img-fluid offer-image" src={exclusive} alt="" />
+                <div className="col-md-6 col-left">
+                    <img data-aos="fade-up" className=" offer-image" src={exclusive} alt="" />
                 </div>
                 <div className="col-md-6 text-offer">
                     <p className="half-title">Exclusively Available on ClothStore</p>

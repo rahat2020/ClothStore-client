@@ -8,7 +8,7 @@ const Testimonial = () => {
     const [comment, setComment] = useState([])
     console.log(comment)
     useEffect(() => {
-        const url = `http://localhost:5000/review`
+        const url = `https://young-falls-22201.herokuapp.com/review`
         fetch(url)
             .then((response) => response.json())
             .then(data => setComment(data))
@@ -35,7 +35,9 @@ const Testimonial = () => {
                                     <FontAwesomeIcon icon={faStar} className="test-start" />
                                     <FontAwesomeIcon icon={faStar} className="test-start" />
                                 </div>
-                                <img src={review.imgURL} className="test-img" alt="" />
+                                <div className="review-img">
+                                    <img src={review.imgURL} className="test-img" alt="" />
+                                </div>
                                 <h4 className="text-center test-title">{review.name}</h4>
                                 <h6 className="text-center mb-3 test-designation">{review.designation}</h6>
                             </div>

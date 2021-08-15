@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
 const Products = () => {
     const [product, setProduct] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/ShowProduct`
+        const url = `https://young-falls-22201.herokuapp.com/ShowProduct`
         fetch(url)
             .then(response => response.json())
             .then(data => setProduct(data))
@@ -20,9 +20,9 @@ const Products = () => {
         AOS.init({ offset: 120, duration: 2000});
     })
     return (
-        <section id="services">
+        <section id="services w-100">
             <div className=" mt-5 ">
-                <h2 class="title">Features<span className="title-half">Products</span></h2>
+                <h2 data-aos="fade-up"  class="title">Features<span className="title-half">Products</span></h2>
             </div>
 
             <div className="container">
@@ -30,7 +30,7 @@ const Products = () => {
                     {
                         product.map((items) => (
 
-                            <div data-aos="zoom-in-down" className="col-md-3 col-sm-2 mb-5">
+                            <div data-aos="fade-down" className="col-md-3 col-sm-2 mb-5">
                                 <div className="card-deck card-img">
                                     <div className="card card-style">
                                         <img src={items.imgURL} class="card-img-top " style={{ height: "230px" }} alt="..." />

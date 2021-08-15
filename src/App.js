@@ -16,28 +16,30 @@ export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
+    <div className="app">
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <PrivateRoute path="/checkout/:productID">
+              <Checkout />
+            </PrivateRoute>
+            <PrivateRoute path="/order/:productID">
+              <Order />
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
+            </PrivateRoute>
+          </Switch>
+        </Router>
+      </UserContext.Provider>
+    </div>
 
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <PrivateRoute path="/checkout/:productID">
-            <Checkout />
-          </PrivateRoute>
-          <PrivateRoute path="/order/:productID">
-            <Order />
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard">
-            <Dashboard />
-          </PrivateRoute>
-        </Switch>
-      </Router>
-    </UserContext.Provider>
 
   );
 }

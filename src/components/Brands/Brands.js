@@ -15,7 +15,7 @@ const Brands = () => {
         <div className="brands">
             <div class="small-container">
             <h2 data-aos="fade-up" class="title">Our Brand<span className="title-half">Partners</span></h2>
-            <div data-aos="fade-left" class="brand-container row">
+            <div data-aos="fade-down" class="brand-container row">
                 <div class="col-md-2.5 img-container">
                     <img src={logocola} className="img-fluid" alt=""/>
                 </div>

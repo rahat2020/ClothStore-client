@@ -1,12 +1,16 @@
 .div-container{
     padding:40px;
 }
+.col-chose-left{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
 .img-responsive{
-    width:70%;
+    width:80%;
     border-radius: 15px;
     height:450px;
     transition: transform 0.5s;
-    margin-left: 100px;
 }
 .img-responsive:hover{
     transform: translateX(10px);
@@ -15,7 +19,6 @@
 .text-style{
     text-align: left;
     max-width: 400px;
-    
     margin: 40px;
 
 }

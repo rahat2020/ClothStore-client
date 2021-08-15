@@ -1,26 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Features.css';
-import categoryOne from '../../img/categoryOne.jpg';
-import categoryTwo from '../../img/categoryTwo.jpg';
-import categoryThree from '../../img/categoryThree.jpg';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import Data from '../../Data/Data';
+import { Link } from 'react-router-dom';
 const Features = () => {
     useEffect(() => {
-        AOS.init({ offset: 120, duration: 2000});
+        AOS.init({ offset: 120, duration: 2000 });
     })
+    const [items, setItems] = useState([])
+    console.log(items)
+    useEffect(() => {
+        setItems(Data)
+    }, [])
     return (
-        <div className="row p-5 mt-5 feature-style">
-            <div className="col-md-4 img-style">
-                <img className="img-fluid" data-aos="zoom-in-up" style={{ width: '300px', height: '300px' }} src={categoryOne} alt=""></img>
+        <section className="mt-5 container">
+            <h2 data-aos="fade-up" class="title">Latest<span className="title-half">Item</span></h2>
+            <div className="row">
+                {
+                    items.map(item => (
+
+                        <div data-aos="fade-down" className="col-md-4 col-all feature-style">
+                            <img className="img-fluid image" src={item.image} alt="img" />
+
+                            <div className="middle">
+                                <div className="d-flex justify-content-between">
+                                    <p className="text">{item.name}</p>
+                                    <p className="text">price: {item.price}</p>
+                                </div>
+                                <Link to=""><button className="buy-btn mt-3">Buy Now</button></Link>
+
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
-            <div className="col-md-4 img-style">
-                <img className="img-fluid" data-aos="zoom-in-up"style={{ width: '300px', height: '300px' }} src={categoryTwo} alt=""></img>
-            </div>
-            <div className="col-md-4 img-style">
-                <img className="img-fluid" data-aos="zoom-in-up" style={{ width: '300px', height: '300px' }} src={categoryThree} alt=""></img>
-            </div>
-        </div>
+        </section>
+
     );
 };
 

@@ -1,5 +1,12 @@
-
-
+.header-img{
+    display: flex;justify-content:center;
+    align-items: center;
+  
+}
+.head-img{
+    height:300px;
+    width:100%;
+}
 .header-title{
    max-width: 500px;
    margin: 20px;

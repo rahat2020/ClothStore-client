@@ -60,7 +60,7 @@ const AddAdmin = () => {
     const [admin, setAdmin] = useState([])
     console.log(admin)
     useEffect(() => {
-        const url = `http://localhost:5000/showAdmin`
+        const url = `https://young-falls-22201.herokuapp.com/showAdmin`
         fetch(url)
             .then(response => response.json())
             .then(data => setAdmin(data))

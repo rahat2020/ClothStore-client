@@ -10,7 +10,7 @@ const Order = () => {
     console.log(productID)
     const [loggedInUser] = useContext(UserContext);
     useEffect(() => {
-        fetch('http://localhost:5000/orderedItem?email=' + loggedInUser.email)
+        fetch('https://young-falls-22201.herokuapp.com/orderedItem?email=' + loggedInUser.email)
             .then((response) => response.json())
             .then(data => setOrder(data))
     }, [setOrder])

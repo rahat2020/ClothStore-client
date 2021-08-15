@@ -6,19 +6,19 @@
 .offer-title{
     font-weight: bold;
 }
+.col-left{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
 .offer-image{
-    width: 300px;
-    height: 300px;
-    max-width:500px;
-    margin-left: 160px;
+    height: 350px;
     transition: transform 0.5s;
 }
 .offer-image:hover{
     transform: translateY(10px);
 }
-.half-title{
-   
-}
+
 
 .text-offer{
     text-align: left;
@@ -29,7 +29,4 @@
 }
 .offer-description{
     color: gray;
-}
-.buy-now{
-
 }

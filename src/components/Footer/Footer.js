@@ -1,13 +1,19 @@
-import React from 'react';
+import React,{ useEffect} from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGoogle, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const Footer = () => {
+     // adding animations for card
+     useEffect(() => {
+        AOS.init({ offset: 120, duration: 2000});
+    })
     return (
         <div className="mt-4 pt-4">
-            <footer class="text-center text-lg-start bg-dark text-muted footer-container">
+            <footer data-aos="fade-up" class="text-center text-lg-start bg-dark text-muted footer-container">
                 <section
                     className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
                     <div className="me-5 d-none d-lg-block Copyright">

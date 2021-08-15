@@ -31,13 +31,17 @@
     margin-top: 10px;
     margin: auto;
 }
+.review-img{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
 
 .test-img{
-    margin-left: 121px;
     margin-bottom: 20px;
-    width: 100px;
+    width:30%;
     border-radius: 21px;
-    height: 104px;
+    /* height: 40%; */
 }
 .test-title{
     font-weight: 700;
