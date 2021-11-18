@@ -2,21 +2,21 @@ import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
-  const navStyle ={ 
+  const navStyle = {
     color: 'tomato'
   }
-  const home ={ 
+  const home = {
     backgroundColor: '#5d63dc',
-    color:'white',
-    padding:'5px',
-    borderRadius:'5px',
+    color: 'white',
+    padding: '5px',
+    borderRadius: '5px',
   }
-  
+
   return (
 
     <div class="container" id="home">
       <nav class="navbar navbar-expand-lg navbar-light ">
-        <Link class="navbar-brand" to="/home">Cloth<span className="logo-title">Store</span></Link>
+        <Link class="navbar-brand" to="/">Cloth<span className="logo-title">Store</span></Link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
           aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,10 +27,10 @@ const Navbar = () => {
               <Link class="nav-link" to="/" style={home}>Home <span class="sr-only">(current)</span></Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" style={navStyle} to="/product">Product</Link>
+              <Link class="nav-link" style={navStyle} to="/products">Product</Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" style={navStyle}  to="/features" tabindex="-1">Features</Link>
+              <Link class="nav-link" style={navStyle} to="/features" tabindex="-1">Features</Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" style={navStyle} to="/contact" tabindex="-1">Contact</Link>

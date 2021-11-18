@@ -13,6 +13,8 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import Checkout from './components/Dashboard/Checkout/Checkout';
 import Order from './components/Dashboard/Order/Order';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+import Contact from './components/Contact/Contact';
+import AllProducts from './components/AllProducts/AllProducts';
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -30,6 +32,12 @@ function App() {
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/contact">
+              <Contact/>
+            </Route>
+            <Route path="/products">
+              <AllProducts/>
             </Route>
             <PrivateRoute path="/checkout/:productID">
               <Checkout />

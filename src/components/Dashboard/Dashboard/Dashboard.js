@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faHome, faComment, faTasks, faUserShield, faListOl} from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faHome, faComment, faTasks, faUserShield, faListOl } from '@fortawesome/free-solid-svg-icons'
 import { Link, useRouteMatch } from "react-router-dom";
 import RouteDiv from "../RouteDiv/RouteDiv";
 import "./Dashboard.css";
@@ -9,7 +9,6 @@ const Dashboard = () => {
   const linkStyle = {
     textDecoration: "none",
     color: "tomato",
-
   };
   return (
     <div>
@@ -21,7 +20,7 @@ const Dashboard = () => {
             </Link>
             <br />
             <Link style={linkStyle} to={`${url}/addReview`}>
-              <FontAwesomeIcon icon={faComment} className="side-icon" />  Add Review{" "}
+              <FontAwesomeIcon icon={faComment} className="side-icon" /> Add Review{" "}
             </Link>
             <br />
             <Link style={linkStyle} to={`${url}/addReview`}>
