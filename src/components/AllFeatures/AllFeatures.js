@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './Features.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Data from '../../Data/Data';
@@ -17,6 +16,7 @@ const Features = () => {
     }, [])
     return (
         <>
+            <Navbar />
             <div className="container">
                 <h2 data-aos="fade-up" class="title">Latest<span className="title-half">Item</span></h2>
                 <div className="row">
@@ -39,6 +39,7 @@ const Features = () => {
                     }
                 </div>
             </div>
+                    <Footer/>
         </>
 
     );

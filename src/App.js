@@ -14,6 +14,7 @@ import Order from './components/Dashboard/Order/Order';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Contact from './components/Contact/Contact';
 import AllProducts from './components/AllProducts/AllProducts';
+import AllFeatures from './components/AllFeatures/AllFeatures'
 
 export const UserContext = createContext();
 function App() {
@@ -27,6 +28,7 @@ function App() {
             appId="612520889736567"
           />
           <Switch>
+        
             <Route exact path="/">
               <Home />
             </Route>
@@ -35,6 +37,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact/>
+            </Route>
+            <Route path="/features">
+              <AllFeatures />
             </Route>
             <Route path="/products">
               <AllProducts/>
