@@ -2,19 +2,19 @@ import './App.css';
 import { createContext, useState } from 'react';
 import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import Login from './components/Login/Login/Login';
+import DoLogin from './components/Login/Login/DoLogin';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import Checkout from './components/Dashboard/Checkout/Checkout';
 import Order from './components/Dashboard/Order/Order';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Contact from './components/Contact/Contact';
 import AllProducts from './components/AllProducts/AllProducts';
+
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -31,7 +31,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/login">
-              <Login />
+              <DoLogin />
             </Route>
             <Route path="/contact">
               <Contact/>

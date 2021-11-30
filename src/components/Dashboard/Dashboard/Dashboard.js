@@ -15,7 +15,7 @@ const Dashboard = () => {
       <div class="sidenav">
         <ul>
           <li>
-            <Link style={linkStyle} to={`${url}/home`}>
+            <Link style={linkStyle} to="/">
               <FontAwesomeIcon icon={faHome} className="side-icon" /> Home{" "}
             </Link>
             <br />
